@@ -18,15 +18,18 @@ function PlayerInformationDisplay({ state }) {
         </>
       )}
       {state.numberOfPlayers > 1 &&
-        [...state.players].map((player, index) => {
-          <div key={index}>
-            <h2>
-              {windowSize < 450
-                ? player.name.slice(0, 1) + player.name.slice(-1)
-                : player.name}
-            </h2>
-            <p>{player.score}</p>
-          </div>;
+        Object.keys(state.players).map((playerKey, index) => {
+          return (
+            <div key={index}>
+              <h2>
+                {windowSize < 450
+                  ? state.players[playerKey].name.slice(0, 1) +
+                    state.players[playerKey].name.slice(-1)
+                  : state.players[playerKey].name}
+              </h2>
+              <p>{state.players[playerKey].score}</p>
+            </div>
+          );
         })}
     </div>
   );

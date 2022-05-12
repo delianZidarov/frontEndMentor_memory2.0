@@ -26,6 +26,7 @@ import {
   faMask,
   faOtter,
 } from "@fortawesome/free-solid-svg-icons";
+import GameOverScreen from "./GameOverScreen.js";
 const ACTIONS = {
   OPEN_SETUP_SCREEN: "open_setup_screen",
   CLOSE_SETUP_SCREEN: "close_setup_screen",
@@ -313,51 +314,51 @@ function Appbase() {
   function closeSetupScreen() {
     dispatch({ type: ACTIONS.CLOSE_SETUP_SCREEN });
   }
-  function openMenu() {
-    dispatch({ type: ACTIONS.OPEN_MENU });
-  }
-  function closeMenu() {
-    dispatch({ type: ACTIONS.CLOSE_MENU });
-  }
+  //   function openMenu() {
+  //     dispatch({ type: ACTIONS.OPEN_MENU });
+  //   }
+  //   function closeMenu() {
+  //     dispatch({ type: ACTIONS.CLOSE_MENU });
+  //   }
   function selectFirstGuess(payload) {
     dispatch({ type: ACTIONS.SELECT_FIRST_GUESS, payload });
   }
   function selectSecondGuess(payload) {
     dispatch({ type: ACTIONS.SELECT_SECOND_GUESS, payload });
   }
-  function addToMatches(payload) {
-    dispatch({ type: ACTIONS.ADD_TO_MATCHES, payload });
-  }
-  function setPlayerNumber(payload) {
-    dispatch({ type: ACTIONS, payload });
-  }
-  function setGameType(payload) {
-    dispatch({ type: ACTIONS.SET_GAME_TYPE, payload });
-  }
-  function setBoardSize(payload) {
-    dispatch({ type: ACTIONS.SET_BOARD_SIZE, payload });
-  }
-  function resetCurrentPlayer() {
-    dispatch({ type: ACTIONS.RESET_CURRENT_PLAYER });
-  }
-  function incrementCurrentPlayer() {
-    dispatch({ type: ACTIONS.INCREMENT_CURRENT_PLAYER });
-  }
-  function decrementMovesLeft() {
-    dispatch({ type: ACTIONS.DECREMENT_MOVES_LEFT });
-  }
-  function resetMovesLeft() {
-    dispatch({ type: ACTIONS.RESET_MOVES_LEFT });
-  }
-  function updatePlayersObject(payload) {
-    dispatch({ type: ACTIONS, payload });
-  }
-  function generateAndSetNewBoard() {
-    dispatch({ type: ACTIONS.GENERATE_AND_SET_NEW_BOARD });
-  }
-  function clearBoard() {
-    dispatch({ type: ACTIONS.CLEAR_BOARD });
-  }
+  //   function addToMatches(payload) {
+  //     dispatch({ type: ACTIONS.ADD_TO_MATCHES, payload });
+  //   }
+  //   function setPlayerNumber(payload) {
+  //     dispatch({ type: ACTIONS, payload });
+  //   }
+  //   function setGameType(payload) {
+  //     dispatch({ type: ACTIONS.SET_GAME_TYPE, payload });
+  //   }
+  //   function setBoardSize(payload) {
+  //     dispatch({ type: ACTIONS.SET_BOARD_SIZE, payload });
+  //   }
+  //   function resetCurrentPlayer() {
+  //     dispatch({ type: ACTIONS.RESET_CURRENT_PLAYER });
+  //   }
+  //   function incrementCurrentPlayer() {
+  //     dispatch({ type: ACTIONS.INCREMENT_CURRENT_PLAYER });
+  //   }
+  //   function decrementMovesLeft() {
+  //     dispatch({ type: ACTIONS.DECREMENT_MOVES_LEFT });
+  //   }
+  //   function resetMovesLeft() {
+  //     dispatch({ type: ACTIONS.RESET_MOVES_LEFT });
+  //   }
+  //   function updatePlayersObject(payload) {
+  //     dispatch({ type: ACTIONS, payload });
+  //   }
+  //   function generateAndSetNewBoard() {
+  //     dispatch({ type: ACTIONS.GENERATE_AND_SET_NEW_BOARD });
+  //   }
+  //   function clearBoard() {
+  //     dispatch({ type: ACTIONS.CLEAR_BOARD });
+  //   }
   function startTimer() {
     dispatch({ type: ACTIONS.START_TIMER });
   }
@@ -370,10 +371,9 @@ function Appbase() {
   function incrementTimer() {
     dispatch({ type: ACTIONS.INCREMENT_TIMER });
   }
-  function resetGuesses() {
-    dispatch({ type: ACTIONS.RESET_GUESSES });
-  }
-  //OBJECT GENERATING FUNCTIONS
+  //   function resetGuesses() {
+  //     dispatch({ type: ACTIONS.RESET_GUESSES });
+  //   }
 
   //COMPOUND DISPATCHES FUNCTIONS
   function startANewGame(payload) {
@@ -458,6 +458,13 @@ function Appbase() {
       }
     }
   }, [state.secondGuess]);
+  //GAME OVER
+  useEffect(() => {
+    console.log("i triggered");
+    if (state.movesLeft === 0) {
+      pauseTimer();
+    }
+  }, [state.movesLeft]);
   return (
     <div>
       <header>
@@ -471,7 +478,7 @@ function Appbase() {
         />
       </header>
       <main>
-        <p>TIME:</p>
+        {/* <p>TIME:</p>
         <p>{state.timer}</p>
         <OutsideControlTest
           startTimer={startTimer}
@@ -480,7 +487,7 @@ function Appbase() {
         />
         <button onClick={openSetupScreen}>OPEN_SETUP_SCREEN</button>
         <button onClick={closeSetupScreen}>CLose setup</button>
-        <button onClick={resetGame}>Reset GAme</button>
+        <button onClick={resetGame}>Reset GAme</button> */}
         <GameBoard
           state={state}
           selectFirstGuess={selectFirstGuess}
@@ -489,6 +496,13 @@ function Appbase() {
         <PlayerInformationDisplay state={state} />
 
         {state.setupScreenOpen && <SetupScreen startANewGame={startANewGame} />}
+        {state.movesLeft === 0 && (
+          <GameOverScreen
+            resetGame={resetGame}
+            getToSetup={getToSetup}
+            state={state}
+          />
+        )}
       </main>
     </div>
   );
