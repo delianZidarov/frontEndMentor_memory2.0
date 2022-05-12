@@ -1,0 +1,14 @@
+.game-control-buttons {
+  display: none;
+}
+.visible {
+  display: block;
+}
+@media screen and (min-width: 450px) {
+  .hide-on-ld {
+    display: none;
+  }
+  .game-control-buttons {
+    display: block;
+  }
+}
