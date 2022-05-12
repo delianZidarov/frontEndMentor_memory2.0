@@ -1,6 +1,6 @@
 import React from "react";
-import { useReducer, useEffect, useState, useRef } from "react";
-import OutsideControlTest from "./OutsideControlTest.js";
+import { useReducer, useEffect } from "react";
+
 import SetupScreen from "./SetupScreen.js";
 import MenuComponent from "./MenuComponent.js";
 import GameBoard from "./GameBoard.js";
@@ -97,44 +97,10 @@ const iconArray = [
 ];
 function reducer(state, action) {
   switch (action.type) {
-    case "open_setup_screen":
-      return { ...state, setupScreenOpen: true };
-    case "close_setup_screen":
-      return { ...state, setupScreenOpen: false };
-    case "open_menu":
-      return { ...state, menuOpen: true };
-    case "close_menu":
-      return { ...state, menuOpen: false };
     case "select_first_guess":
       return { ...state, firstGuess: action.payload };
     case "select_second_guess":
       return { ...state, secondGuess: action.payload };
-    case "add_to_matches":
-      return { ...state, matches: { ...state.matches, [action.payload]: 1 } };
-    case "set_player_number":
-      return { ...state, numberOfPlayers: action.payload };
-    case "set_game_type":
-      return { ...state, gameType: action.payload };
-    case "set_board_size":
-      return { ...state, size: parseInt(action.payload) };
-    case "reset_current_player":
-      return { ...state, currentPlayer: 1 };
-    case "increment_current_player":
-      let nextPlayer;
-      if (state.currentPlayer + 1 <= state.numberOfPlayers) {
-        nextPlayer = state.currentPlayer + 1;
-      } else {
-        nextPlayer = 1;
-      }
-      return { ...state, currentPlayer: nextPlayer };
-    case "reset_moves_left":
-      return { ...state, movesLeft: state.size ** 2 / 2 };
-    case "decrement_moves_left":
-      return { ...state, movesLeft: state.movesLeft - 1 };
-    case "update_players_object":
-      return { ...state, players: action.payload };
-    case "generate_and_set_new_board":
-      return { ...state, board: generateBoard(state.gameType, state.size) };
     case "start_timer":
       return { ...state, timerActive: true, timerPaused: false };
     case "pause_timer":
@@ -143,10 +109,6 @@ function reducer(state, action) {
       return { ...state, timer: 0, timerActive: false, timerPaused: true };
     case "increment_timer":
       return { ...state, timer: state.timer + 1 };
-    case "clear_board":
-      return { ...state, board: [] };
-    case "reset_guesses":
-      return { ...state, firstGuess: null, secondGuess: null };
     case "start_a_new_game":
       return {
         setupScreenOpen: false,
@@ -308,72 +270,23 @@ function getNextPlayer(currentPlayer, numberOfPlayers) {
 function Appbase() {
   const [state, dispatch] = useReducer(reducer, defaultState);
   //DISPATCH FUNCTIONS
-  function openSetupScreen() {
-    dispatch({ type: ACTIONS.OPEN_SETUP_SCREEN });
-  }
-  function closeSetupScreen() {
-    dispatch({ type: ACTIONS.CLOSE_SETUP_SCREEN });
-  }
-  //   function openMenu() {
-  //     dispatch({ type: ACTIONS.OPEN_MENU });
-  //   }
-  //   function closeMenu() {
-  //     dispatch({ type: ACTIONS.CLOSE_MENU });
-  //   }
+
   function selectFirstGuess(payload) {
     dispatch({ type: ACTIONS.SELECT_FIRST_GUESS, payload });
   }
   function selectSecondGuess(payload) {
     dispatch({ type: ACTIONS.SELECT_SECOND_GUESS, payload });
   }
-  //   function addToMatches(payload) {
-  //     dispatch({ type: ACTIONS.ADD_TO_MATCHES, payload });
-  //   }
-  //   function setPlayerNumber(payload) {
-  //     dispatch({ type: ACTIONS, payload });
-  //   }
-  //   function setGameType(payload) {
-  //     dispatch({ type: ACTIONS.SET_GAME_TYPE, payload });
-  //   }
-  //   function setBoardSize(payload) {
-  //     dispatch({ type: ACTIONS.SET_BOARD_SIZE, payload });
-  //   }
-  //   function resetCurrentPlayer() {
-  //     dispatch({ type: ACTIONS.RESET_CURRENT_PLAYER });
-  //   }
-  //   function incrementCurrentPlayer() {
-  //     dispatch({ type: ACTIONS.INCREMENT_CURRENT_PLAYER });
-  //   }
-  //   function decrementMovesLeft() {
-  //     dispatch({ type: ACTIONS.DECREMENT_MOVES_LEFT });
-  //   }
-  //   function resetMovesLeft() {
-  //     dispatch({ type: ACTIONS.RESET_MOVES_LEFT });
-  //   }
-  //   function updatePlayersObject(payload) {
-  //     dispatch({ type: ACTIONS, payload });
-  //   }
-  //   function generateAndSetNewBoard() {
-  //     dispatch({ type: ACTIONS.GENERATE_AND_SET_NEW_BOARD });
-  //   }
-  //   function clearBoard() {
-  //     dispatch({ type: ACTIONS.CLEAR_BOARD });
-  //   }
+
   function startTimer() {
     dispatch({ type: ACTIONS.START_TIMER });
   }
   function pauseTimer() {
     dispatch({ type: ACTIONS.PAUSE_TIMER });
   }
-  function resetTimer() {
-    dispatch({ type: ACTIONS.RESET_TIMER });
-  }
   function incrementTimer() {
     dispatch({ type: ACTIONS.INCREMENT_TIMER });
   }
-  //   function resetGuesses() {
-  //     dispatch({ type: ACTIONS.RESET_GUESSES });
-  //   }
 
   //COMPOUND DISPATCHES FUNCTIONS
   function startANewGame(payload) {
@@ -397,36 +310,6 @@ function Appbase() {
   function handleFailToScore(payload) {
     dispatch({ type: ACTIONS.HANDLE_FAIL_TO_SCORE, payload });
   }
-  //   console.log("TESTER", state.players[state.currentPlayer]);
-  //   const [isActive, setIsActive] = useState(false);
-  //   const [isPaused, setIsPaused] = useState(true);
-  //   const [time, setTime] = useState(0);
-  //   function triggerStart() {
-  //     setIsActive(true);
-  //     setIsPaused(false);
-  //   }
-  //   function triggerPause() {
-  //     setIsPaused(true);
-  //   }
-  //   function reset() {
-  //     setIsActive(false);
-  //     setIsPaused(true);
-  //     setTime(0);
-  //   }
-  //   useEffect(() => {
-  //     let timerId;
-  //     if (isActive && isPaused === false) {
-  //       timerId = setInterval(() => {
-  //         setTime((time) => time + 1);
-  //       }, 1000);
-  //     } else {
-  //       clearInterval(timerId);
-  //     }
-  //     return () => {
-  //       clearInterval(timerId);
-  //     };
-  //   }, [isActive, isPaused]);
-  console.log("BOARD", state);
   //TIMER
   useEffect(() => {
     let timerId;
@@ -460,7 +343,6 @@ function Appbase() {
   }, [state.secondGuess]);
   //GAME OVER
   useEffect(() => {
-    console.log("i triggered");
     if (state.movesLeft === 0) {
       pauseTimer();
     }
@@ -478,16 +360,6 @@ function Appbase() {
         />
       </header>
       <main>
-        {/* <p>TIME:</p>
-        <p>{state.timer}</p>
-        <OutsideControlTest
-          startTimer={startTimer}
-          pauseTimer={pauseTimer}
-          resetTimer={resetTimer}
-        />
-        <button onClick={openSetupScreen}>OPEN_SETUP_SCREEN</button>
-        <button onClick={closeSetupScreen}>CLose setup</button>
-        <button onClick={resetGame}>Reset GAme</button> */}
         <GameBoard
           state={state}
           selectFirstGuess={selectFirstGuess}
