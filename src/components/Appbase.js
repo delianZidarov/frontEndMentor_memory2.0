@@ -1,11 +1,11 @@
 import React from "react";
 import { useReducer, useEffect } from "react";
-
 import SetupScreen from "./SetupScreen.js";
 import MenuComponent from "./MenuComponent.js";
 import GameBoard from "./GameBoard.js";
 import PlayerInformationDisplay from "./PlayerInformationDisplay.js";
 import Logo from "./Logo.js";
+import "../App.css";
 import {
   faAward,
   faAnchor,
