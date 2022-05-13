@@ -12,9 +12,7 @@
 
   white-space: nowrap;
 }
-header .logo {
-  height: var(--logo-game-board);
-}
+
 header h1 {
   height: var(--logo-game-board);
 }

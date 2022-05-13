@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import Logo from "./Logo.js";
+import "./css/SetupScreen.css";
+
 function SetupScreen({ startANewGame }) {
   const defaultFormState = {
     "game-theme": "numbers",
@@ -21,7 +24,10 @@ function SetupScreen({ startANewGame }) {
   }
   console.log(formData);
   return (
-    <div>
+    <div className="setup-popup">
+      <div className="setup-logo-container">
+        <Logo />
+      </div>
       <form>
         <h2>Select Theme</h2>
         <div>

@@ -147,7 +147,7 @@ function reducer(state, action) {
         timerPaused: true,
       };
     case "get_to_setup":
-      return { ...state, menuOpen: false, setupScreenOpen: true };
+      return { ...state, menuOpen: false, setupScreenOpen: true, movesLeft: 8 };
     case "open_menu_pause":
       return {
         ...state,
@@ -267,6 +267,7 @@ function getNextPlayer(currentPlayer, numberOfPlayers) {
   }
   return nextPlayer;
 }
+function formatTime() {}
 function Appbase() {
   const [state, dispatch] = useReducer(reducer, defaultState);
   //DISPATCH FUNCTIONS

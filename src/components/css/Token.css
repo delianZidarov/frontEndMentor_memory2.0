@@ -6,6 +6,7 @@
   height: 100%;
   font-size: var(--token-font-size);
   border-radius: 50%;
+  cursor: pointer;
   color: var(--medium-dark-text-color);
   background-color: var(--medium-dark-text-color);
   transition: 0.15s ease-in-out;

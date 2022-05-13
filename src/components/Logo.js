@@ -5,8 +5,9 @@ function Logo() {
     <h1>
       <svg
         className="logo"
-        width="150"
-        height="28"
+        width="100%"
+        height="100%"
+        viewBox="0 0 150 28"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

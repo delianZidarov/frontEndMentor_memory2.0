@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-weight: var(--font-weight);
 }
 :root {
   --font: "Atkinson Hyperlegible", sans-serif;
@@ -82,9 +83,9 @@
 }
 #root {
   font-family: var(--font);
-  font-weight: var(--font-weight);
 }
 button {
   border-style: none;
   border-radius: var(--border-radius-large);
+  cursor: pointer;
 }

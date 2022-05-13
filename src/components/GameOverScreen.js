@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./css/GameOverScreen.css";
 function GameOverScreen({ state, resetGame, getToSetup }) {
   let sortPlayersArray = Object.keys(state.players).map(
     (playerKey) => state.players[playerKey]
@@ -14,8 +14,8 @@ function GameOverScreen({ state, resetGame, getToSetup }) {
   }
   return (
     <div className="game-over-popup">
-      <div>
-        <div>
+      <div className="game-over-card">
+        <div className="game-over-card-tittle">
           {state.numberOfPlayers === 1 && (
             <>
               <h2>You did it!</h2>
@@ -33,7 +33,7 @@ function GameOverScreen({ state, resetGame, getToSetup }) {
             </>
           )}
         </div>
-        <div>
+        <div className="game-over-player-info">
           {state.numberOfPlayers === 1 && (
             <>
               <div>
@@ -69,7 +69,7 @@ function GameOverScreen({ state, resetGame, getToSetup }) {
             </>
           )}
         </div>
-        <div>
+        <div className="game-over-button-container">
           <button onClick={resetGame}>Restart</button>
           <button onClick={getToSetup}>Setup New Game</button>
         </div>

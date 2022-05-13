@@ -1,6 +1,5 @@
 import React from "react";
 import "./css/MenuComponent.css";
-import { useEffect } from "react";
 function MenuComponent({
   getToSetup,
   resetGame,
@@ -20,8 +19,8 @@ function MenuComponent({
           isMenuOpen ? "game-control-buttons visible" : "game-control-buttons"
         }
       >
-        <div>
-          <button onClick={resetGame}>Restart Game</button>
+        <div className="menu-card">
+          <button onClick={resetGame}>Restart</button>
           <button onClick={getToSetup}>New Game</button>
           <button className="hide-on-ld" onClick={closeMenuActivate}>
             Resume Game

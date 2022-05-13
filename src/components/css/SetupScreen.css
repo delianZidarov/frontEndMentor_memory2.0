@@ -1,0 +1,71 @@
+.setup-popup {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--setup-overlay-bg);
+}
+.setup-logo-container .logo {
+  height: 40px;
+  width: 122px;
+  margin-top: 80px;
+}
+.setup-logo-container .logo-fill {
+  fill: var(--light-text-color);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 1.5rem;
+  width: 87.2vw;
+  border-radius: var(--border-radius-small);
+  background-color: var(--light-text-color);
+}
+form h2 {
+  font-size: var(--setup-font-size);
+  line-height: var(--setup-line-height);
+  color: var(--medium-text-color);
+}
+input[type="radio"] {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+input[type="radio"] + label {
+  font-size: var(--setup-font-size);
+  line-height: var(--setup-line-height);
+  padding: 10px;
+  flex-grow: 1;
+  text-align: center;
+  border-radius: var(--border-radius-large);
+  color: var(--light-text-color);
+  background-color: var(--menu-selection-button-bg);
+}
+input[type="radio"]:checked + label {
+  background-color: var(--menu-selection-button-bg-selected);
+}
+input[type="radio"] + label:hover {
+  cursor: hover;
+  background-color: var(--menu-selection-button-bg-hover);
+}
+form div {
+  display: flex;
+  gap: 11px;
+  margin-bottom: 13px;
+}
+form button {
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
+  padding: 13px;
+  color: var(--light-text-color);
+  background-color: var(--primary-button-bg);
+}
+form button:hover {
+  background-color: var(--primary-button-bg-hover);
+}
