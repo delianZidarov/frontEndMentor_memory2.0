@@ -11,7 +11,7 @@ function MenuComponent({
   return (
     <div>
       <div>
-        <button className="hide-on-ld" onClick={openMenuPause}>
+        <button className="hide-on-ld menu-button" onClick={openMenuPause}>
           Menu
         </button>
       </div>

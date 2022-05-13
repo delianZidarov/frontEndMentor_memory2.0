@@ -1,3 +1,13 @@
+.menu-button {
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
+  padding: 9px 16px;
+  color: var(--light-text-color);
+  background-color: var(--primary-button-bg);
+}
+.menu-button:hover {
+  background-color: var(--primary-button-bg-hover);
+}
 .game-control-buttons {
   display: none;
 }

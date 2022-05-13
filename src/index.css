@@ -3,3 +3,88 @@
   padding: 0;
   margin: 0;
 }
+:root {
+  --font: "Atkinson Hyperlegible", sans-serif;
+  --font-weight: 700;
+  /* COLORS */
+  --primary-button-bg: #fda214;
+  --primary-button-bg-hover: #ffb84a;
+  --menu-selection-button-bg-selected: #304859;
+  --menu-selection-button-bg-hover: #6395b8;
+  --menu-selection-button-bg: #bcced9;
+
+  --light-text-color: #fcfcfc;
+  --medium-text-color: #7191a5;
+  --medium-dark-text-color: #304859;
+  --dark-text-color: #152938;
+
+  --pop-up-overlay-bg: rgba(0, 0, 0, 0.5);
+  --setup-overlay-bg: #152938;
+  --player-info-bg: #dfe7ec;
+  --card-bg: #f2f2f2;
+  /* MEASUREMENTS */
+  --border-radius-large: 26px;
+  --border-radius-medium: 20px;
+  --border-radius-small: 10px;
+  --border-radius-xsmall: 5px;
+
+  --logo-setup-size: 2rem;
+  --logo-setup-tablet-dsk: 40px;
+
+  --logo-game-board: 30px;
+  --logo-game-board-tablet-dsk: 40px;
+
+  --token-font-size: 1.5rem;
+  --token-font-size-tablet: 44px;
+  --token-diameter: 47px;
+  --token-diameter-tablet: 82px;
+
+  --button-font-size: 1.125rem;
+  --button-font-size-tablet-dsk: 32px;
+  --button-line-height-tablet-dsk: 40px;
+  --button-line-height: 1.375rem;
+
+  --label-font-size: 1rem;
+  --label-font-size-tablet-dsk: 26px;
+  --label-line-height-tablet-dsk: 32px;
+  --label-line-height: 1.25rem;
+  --setup-font-size: 0.9375rem;
+  --setup-font-size-tablet-dsk: 20px;
+  --setup-line-height-dsk: 25px;
+  --setup-line-height: 1.1875rem;
+  /* GAMEOVER TITLE */
+  --game-over-h2-font-size: 24px;
+  --game-over-h2-line-height: 30px;
+  --game-over-h2-font-size-tablet-dsk: 48px;
+  --game-over-h2-line-height-tablet-dsk: 60px;
+  --game-over-sub-font-size: 14px;
+  --game-over-sub-line-height: 17px;
+  --game-over-sub-font-size-tablet-dsk: 18px;
+  --game-over-sub-line-height-tablet-dsk: 22px;
+  /* PLAYER INFORMATION TABS */
+  --game-over-title-font-size: 0.8125rem;
+  --game-over-title-line-height: 1rem;
+  --game-over-title-font-size-tablet-dsk: 18px;
+  --game-over-title-line-height-tablet-dsk: 22px;
+  --game-over-p-font-size: 1.25rem;
+  --game-over-p-line-height: 1.5625rem;
+  --game-over-p-font-size-tablet-dsk: 32px;
+  --game-over-p-line-height-tablet-dsk: 40px;
+
+  --multi-sing-player-info-title-font-size: 15px;
+  --multi-sing-player-info-title-line-height: 19px;
+  --multi-sing-player-info-p-font-size: 24px;
+  --multi-sing-player-info-p-line-height: 30px;
+  --sing-player-info-title-font-size-tablet-dsk: 18px;
+  --sing-player-info-title-line-height-tablet-dsk: 22px;
+  --sing-player-info-p-font-size-tablet-dsk: 32px;
+  --sing-player-info-p-line-height-tablet-dsk: 40px;
+}
+#root {
+  font-family: var(--font);
+  font-weight: var(--font-weight);
+}
+button {
+  border-style: none;
+  border-radius: var(--border-radius-large);
+}

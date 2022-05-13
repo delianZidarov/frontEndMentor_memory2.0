@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
 import Token from "./Token.js";
+import "./css/GameBoard.css";
 
 function GameBoard({ state, selectFirstGuess, selectSecondGuess }) {
   return (

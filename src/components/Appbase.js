@@ -331,14 +331,18 @@ function Appbase() {
   //CHECK FOR SCORE AND ADVANCE GAME
   useEffect(() => {
     if (state.firstGuess !== null && state.secondGuess !== null) {
-      if (state.board[state.firstGuess] === state.board[state.secondGuess]) {
-        handleScore({
-          score: state.players[state.currentPlayer].score,
-          moves: state.players[state.currentPlayer].moves,
-        });
-      } else {
-        handleFailToScore({ moves: state.players[state.currentPlayer].moves });
-      }
+      setTimeout(() => {
+        if (state.board[state.firstGuess] === state.board[state.secondGuess]) {
+          handleScore({
+            score: state.players[state.currentPlayer].score,
+            moves: state.players[state.currentPlayer].moves,
+          });
+        } else {
+          handleFailToScore({
+            moves: state.players[state.currentPlayer].moves,
+          });
+        }
+      }, 500);
     }
   }, [state.secondGuess]);
   //GAME OVER
@@ -348,7 +352,7 @@ function Appbase() {
     }
   }, [state.movesLeft]);
   return (
-    <div>
+    <div className="app-container">
       <header>
         <Logo />
         <MenuComponent
