@@ -89,7 +89,7 @@
 
   .player-information-container.single-player-container {
     gap: 30px;
-    width: 37.5vw;
+    width: 40.5vw;
     padding: 25px;
   }
   .active-player::before {
