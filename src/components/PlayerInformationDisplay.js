@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/PlayerInformationDisplay.css";
 
-function PlayerInformationDisplay({ state }) {
+function PlayerInformationDisplay({ state, formatTime }) {
   const windowSize = window.innerWidth;
 
   return (
@@ -10,7 +10,7 @@ function PlayerInformationDisplay({ state }) {
         <>
           <div className="single-player">
             <h2>Time</h2>
-            <p>{state.timer}</p>
+            <p>{formatTime(state.timer)}</p>
           </div>
           <div className="single-player">
             <h2>Moves</h2>

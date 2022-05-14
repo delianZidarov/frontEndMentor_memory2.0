@@ -43,6 +43,13 @@ function Token({ icon, tokenId, state, selectFirstGuess, selectSecondGuess }) {
       setCanBeClicked(false);
     }
   }, [state.matches]);
+  // Testing to see if this solves visibility behavior
+  useEffect(() => {
+    if (state.setupScreenOpen) {
+      setTokenClass(`game-token ${state.size === 6 ? "small" : ""}`);
+    }
+  }, [state.setupScreenOpen]);
+
   return (
     <button
       id={tokenId}

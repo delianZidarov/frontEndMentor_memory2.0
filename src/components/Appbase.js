@@ -267,7 +267,11 @@ function getNextPlayer(currentPlayer, numberOfPlayers) {
   }
   return nextPlayer;
 }
-function formatTime() {}
+function formatTime(seconds) {
+  let minutes = Math.floor(seconds / 60).toString();
+  let sec = (seconds % 60).toString();
+  return minutes + ":" + sec.padStart(2, "0");
+}
 function Appbase() {
   const [state, dispatch] = useReducer(reducer, defaultState);
   //DISPATCH FUNCTIONS
@@ -370,7 +374,7 @@ function Appbase() {
           selectFirstGuess={selectFirstGuess}
           selectSecondGuess={selectSecondGuess}
         />
-        <PlayerInformationDisplay state={state} />
+        <PlayerInformationDisplay state={state} formatTime={formatTime} />
 
         {state.setupScreenOpen && <SetupScreen startANewGame={startANewGame} />}
         {state.movesLeft === 0 && (
@@ -378,6 +382,7 @@ function Appbase() {
             resetGame={resetGame}
             getToSetup={getToSetup}
             state={state}
+            formatTime={formatTime}
           />
         )}
       </main>

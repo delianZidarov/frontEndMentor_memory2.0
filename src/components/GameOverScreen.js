@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/GameOverScreen.css";
-function GameOverScreen({ state, resetGame, getToSetup }) {
+function GameOverScreen({ state, resetGame, getToSetup, formatTime }) {
   let sortPlayersArray = Object.keys(state.players).map(
     (playerKey) => state.players[playerKey]
   );
@@ -38,7 +38,7 @@ function GameOverScreen({ state, resetGame, getToSetup }) {
             <>
               <div>
                 <h3>Time Elapsed</h3>
-                <p>{state.timer}</p>
+                <p>{formatTime(state.timer)}</p>
               </div>
               <div>
                 <h3>Moves Taken</h3>
