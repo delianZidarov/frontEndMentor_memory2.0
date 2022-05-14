@@ -2,6 +2,8 @@
   display: grid;
   width: 87.2vw;
   height: 87.2vw;
+  max-width: 572px;
+  max-height: 572px;
   margin: auto;
 }
 .gameboard.four {

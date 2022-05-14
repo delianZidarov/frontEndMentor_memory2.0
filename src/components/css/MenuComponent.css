@@ -65,6 +65,7 @@
     flex-direction: row;
     padding: 0;
     width: 38vw;
+
     height: 52px;
   }
   .menu-card button {
@@ -75,5 +76,10 @@
   }
   .menu-card button:nth-child(2) {
     flex-grow: 2;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .menu-card {
+    width: 292px;
   }
 }
