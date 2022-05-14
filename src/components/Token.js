@@ -51,14 +51,14 @@ function Token({ icon, tokenId, state, selectFirstGuess, selectSecondGuess }) {
   }, [state.setupScreenOpen]);
 
   return (
-    <button
+    <div
       id={tokenId}
       className={tokenClass}
       onClick={canBeClicked ? onTokenClick : undefined}
     >
       {state.gameType === "icons" && <FontAwesomeIcon icon={icon} />}
       {state.gameType === "numbers" && <div>{icon}</div>}
-    </button>
+    </div>
   );
 }
 
