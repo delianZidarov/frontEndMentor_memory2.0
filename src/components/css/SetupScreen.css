@@ -39,10 +39,12 @@ input[type="radio"] {
   pointer-events: none;
 }
 input[type="radio"] + label {
-  font-size: var(--setup-font-size);
-  line-height: var(--setup-line-height);
+  font-size: var(--label-font-size);
+  line-height: var(--label-line-height);
   padding: 10px;
   flex-grow: 1;
+  flex-basis: 50%;
+  cursor: pointer;
   text-align: center;
   border-radius: var(--border-radius-large);
   color: var(--light-text-color);
@@ -52,7 +54,6 @@ input[type="radio"]:checked + label {
   background-color: var(--menu-selection-button-bg-selected);
 }
 input[type="radio"] + label:hover {
-  cursor: hover;
   background-color: var(--menu-selection-button-bg-hover);
 }
 form div {
@@ -66,7 +67,45 @@ form button {
   padding: 13px;
   color: var(--light-text-color);
   background-color: var(--primary-button-bg);
+  border-radius: var(--border-radius-large);
 }
 form button:hover {
   background-color: var(--primary-button-bg-hover);
+}
+@media screen and (min-width: 700px) {
+  .setup-popup {
+    gap: 7.6vh;
+  }
+  .setup-logo-container .logo {
+    width: 153px;
+    height: 50px;
+    margin-top: 169px;
+  }
+  form {
+    width: 85.15vw;
+    gap: 16px;
+    padding: 56px;
+  }
+  form div {
+    gap: 30px;
+    margin-bottom: 16px;
+  }
+  form div:nth-of-type(2) {
+    gap: 21px;
+  }
+  form h2 {
+    font-size: var(--setup-font-size-tablet-dsk);
+    line-height: var(--setup-line-height-dsk);
+  }
+  input[type="radio"] + label {
+    font-size: var(--label-font-size-tablet-dsk);
+    line-height: var(--label-line-height-tablet-dsk);
+    padding: 10px;
+  }
+  form button {
+    font-size: var(--button-font-size-tablet-dsk);
+    line-height: var(--button-line-height-tablet-dsk);
+    padding: 15px;
+    border-radius: 35px;
+  }
 }
