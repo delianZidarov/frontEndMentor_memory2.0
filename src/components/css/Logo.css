@@ -26,3 +26,8 @@ header h1 {
     height: auto;
   }
 }
+@media screen and (min-width: 1400px) {
+  .logo {
+    transform: none;
+  }
+}
