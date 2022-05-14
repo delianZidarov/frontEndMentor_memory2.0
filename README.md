@@ -32,12 +32,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![https://github.com/delianZidarov/frontEndMentor_memory2.0](./screenshot.png)
 
 ### Links
 
-- Solution URL: [https://github.com/delianZidarov/frontEndMentor_memory2.0](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/delianZidarov/frontEndMentor_memory2.0](https://github.com/delianZidarov/frontEndMentor_memory2.0)
+- Live Site URL: [https://front-end-mentor-memory2-0.vercel.app/](https://front-end-mentor-memory2-0.vercel.app/)
 
 ## My process
 

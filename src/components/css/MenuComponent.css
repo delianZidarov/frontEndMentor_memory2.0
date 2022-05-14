@@ -78,6 +78,11 @@
     flex-grow: 2;
   }
 }
+@media screen and (min-width: 1400px) {
+  .menu-card {
+    width: 292px;
+  }
+}
 @media screen and (min-width: 1500px) {
   .menu-card {
     width: 292px;
