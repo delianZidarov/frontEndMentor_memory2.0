@@ -84,3 +84,5 @@
 .finalscore.winner p {
   color: var(--light-text-color);
 }
+@media screen and (min-width: 700px) {
+}

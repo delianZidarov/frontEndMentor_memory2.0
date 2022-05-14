@@ -16,3 +16,13 @@
 header h1 {
   height: var(--logo-game-board);
 }
+@media screen and (min-width: 700px) {
+  .logo {
+    height: 50px;
+    width: 153px;
+    transform: translateY(15px);
+  }
+  header h1 {
+    height: auto;
+  }
+}

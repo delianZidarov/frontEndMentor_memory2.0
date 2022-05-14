@@ -19,3 +19,8 @@
   color: var(--light-text-color);
   background-color: var(--menu-selection-button-bg);
 }
+@media screen and (min-width: 700px) {
+  .game-token {
+    font-size: var(--token-font-size-tablet);
+  }
+}

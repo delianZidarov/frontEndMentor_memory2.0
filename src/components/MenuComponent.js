@@ -8,7 +8,7 @@ function MenuComponent({
   isMenuOpen,
 }) {
   return (
-    <div>
+    <div className="menu-components">
       <div>
         <button className="hide-on-ld menu-button" onClick={openMenuPause}>
           Menu

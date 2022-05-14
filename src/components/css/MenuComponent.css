@@ -49,11 +49,31 @@
 .visible {
   display: flex;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 650px) {
   .hide-on-ld {
     display: none;
   }
   .game-control-buttons {
+    position: static;
     display: flex;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+  }
+  .menu-card {
+    background-color: transparent;
+    flex-direction: row;
+    padding: 0;
+    width: 38vw;
+    height: 52px;
+  }
+  .menu-card button {
+    flex-grow: 3;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 13px;
+  }
+  .menu-card button:nth-child(2) {
+    flex-grow: 2;
   }
 }

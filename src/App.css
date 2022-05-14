@@ -15,3 +15,9 @@ main {
   height: 100vh;
   grid-template-rows: auto 1fr;
 }
+@media screen and (min-width: 700px) {
+  header {
+    margin: 37px 40px;
+    height: 52px;
+  }
+}

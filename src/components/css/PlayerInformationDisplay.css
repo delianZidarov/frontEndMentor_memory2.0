@@ -42,3 +42,28 @@
   line-height: var(--multi-sing-player-info-p-line-height);
   color: var(--dark-text-color);
 }
+@media screen and (min-width: 700px) {
+  .player-information-container div {
+    text-align: left;
+    padding: 14px 16px 12px 16px;
+    border-radius: var(--border-radius-small);
+  }
+  .player-information-container.single-player-container {
+    gap: 30px;
+    width: 70.3vw;
+  }
+  .player-information-container .single-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 50%;
+  }
+  .player-information-container .single-player h2 {
+    font-size: var(--sing-player-info-title-font-size-tablet-dsk);
+    line-height: var(--sing-player-info-title-line-height-tablet-dsk);
+  }
+  .player-information-container .single-player p {
+    font-size: var(--sing-player-info-p-font-size-tablet-dsk);
+    line-height: var(--sing-player-info-p-line-height-tablet-dsk);
+  }
+}

@@ -14,3 +14,17 @@
   grid-template-rows: repeat(6, 1fr);
   gap: 10px;
 }
+@media screen and (min-width: 700px) {
+  .gameboard {
+    width: 69.3vw;
+    height: 69.3vw;
+    margin-top: 121px;
+    margin-bottom: 120px;
+  }
+  .gameboard.four {
+    gap: 20px;
+  }
+  .gameboard.six {
+    gap: 16px;
+  }
+}

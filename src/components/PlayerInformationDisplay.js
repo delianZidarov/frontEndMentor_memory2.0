@@ -5,7 +5,11 @@ function PlayerInformationDisplay({ state, formatTime }) {
   const windowSize = window.innerWidth;
 
   return (
-    <div className="player-information-container">
+    <div
+      className={`player-information-container ${
+        state.numberOfPlayers === 1 ? "single-player-container" : ""
+      }`}
+    >
       {state.numberOfPlayers === 1 && (
         <>
           <div className="single-player">
@@ -31,7 +35,7 @@ function PlayerInformationDisplay({ state, formatTime }) {
               }
             >
               <h2>
-                {windowSize < 450
+                {windowSize < 550
                   ? state.players[playerKey].name.slice(0, 1) +
                     state.players[playerKey].name.slice(-1)
                   : state.players[playerKey].name}
