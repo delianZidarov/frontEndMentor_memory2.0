@@ -11,6 +11,10 @@
   background-color: var(--medium-dark-text-color);
   transition: 0.15s ease-in-out;
 }
+.game-token:hover {
+  color: var(--menu-selection-button-bg-hover);
+  background-color: var(--menu-selection-button-bg-hover);
+}
 .active {
   color: var(--light-text-color);
   background-color: var(--primary-button-bg);

@@ -28,3 +28,25 @@
     gap: 16px;
   }
 }
+@media screen and (min-width: 800px) {
+  .gameboard {
+    width: 50vw;
+    height: 50vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gameboard {
+    width: 39.72vw;
+    height: 39.72vw;
+    margin-top: 0;
+    margin-bottom: 10.35vh;
+  }
+  .gameboard.four {
+    gap: 20px;
+  }
+  .gameboard.six {
+    gap: 16px;
+  }
+}

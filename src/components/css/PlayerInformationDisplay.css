@@ -66,4 +66,44 @@
     font-size: var(--sing-player-info-p-font-size-tablet-dsk);
     line-height: var(--sing-player-info-p-line-height-tablet-dsk);
   }
+  .active-player::before {
+    --triangle-half-length: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .player-information-container {
+    width: 77.08vw;
+    padding: 0;
+  }
+  .player-information-container div {
+    text-align: left;
+    padding: 14px 16px 12px 16px;
+    border-radius: var(--border-radius-small);
+  }
+  .player-information-container div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 21px;
+  }
+
+  .player-information-container.single-player-container {
+    gap: 30px;
+    width: 37.5vw;
+    padding: 25px;
+  }
+  .active-player::before {
+    --triangle-half-length: 19.28px;
+  }
+  .active-player::after {
+    position: absolute;
+    content: "CURRENT TURN";
+    width: 100%;
+    bottom: -36px;
+    left: 0;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 13px;
+    line-height: 16px;
+  }
 }

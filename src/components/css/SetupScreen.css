@@ -85,10 +85,43 @@ form button:hover {
     width: 85.15vw;
     gap: 16px;
     padding: 56px;
+    border-radius: var(--border-radius-medium);
   }
   form div {
     gap: 30px;
+  }
+  form div:nth-of-type(2) {
+    gap: 21px;
+  }
+  form h2 {
+    font-size: var(--setup-font-size-tablet-dsk);
+    line-height: var(--setup-line-height-dsk);
+  }
+  input[type="radio"] + label {
+    font-size: var(--label-font-size-tablet-dsk);
+    line-height: var(--label-line-height-tablet-dsk);
+    padding: 10px;
     margin-bottom: 16px;
+  }
+  form button {
+    font-size: var(--button-font-size-tablet-dsk);
+    line-height: var(--button-line-height-tablet-dsk);
+    padding: 15px;
+    border-radius: 35px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .setup-logo-container .logo {
+    margin-top: 15vh;
+  }
+  form {
+    width: 45.41vw;
+    gap: 16px;
+    padding: 56px;
+  }
+  form div {
+    gap: 30px;
+    margin-bottom: 0px;
   }
   form div:nth-of-type(2) {
     gap: 21px;

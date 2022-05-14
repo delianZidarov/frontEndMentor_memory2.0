@@ -85,4 +85,56 @@
   color: var(--light-text-color);
 }
 @media screen and (min-width: 700px) {
+  .game-over-card {
+    width: 85.15vw;
+    padding: 51px 56px 69px 51px;
+    border-radius: var(--border-radius-medium);
+    background-color: var(--card-bg);
+  }
+  .game-over-card-tittle {
+    margin-top: 0px;
+  }
+  .game-over-card-tittle h2 {
+    font-size: var(--game-over-h2-font-size-tablet-dsk);
+    line-height: var(--game-over-h2-line-height-tablet-dsk);
+    margin-bottom: 16px;
+  }
+  .game-over-card-tittle p {
+    font-size: var(--game-over-sub-font-size-tablet-dsk);
+    line-height: var(--game-over-sub-line-height-tablet-dsk);
+  }
+  .game-over-player-info {
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .game-over-player-info div {
+    border-radius: var(--border-radius-small);
+    padding: 25px 32px;
+  }
+  .game-over-player-info h3 {
+    font-size: var(--game-over-title-font-size-tablet-dsk);
+    line-height: var(--game-over-title-line-height-tablet-dsk);
+  }
+  .game-over-player-info p {
+    font-size: var(--game-over-p-font-size-tablet-dsk);
+    line-height: var(--game-over-p-line-height-tablet-dsk);
+  }
+  .game-over-button-container {
+    flex-direction: row;
+    gap: 14px;
+  }
+  .game-over-button-container button {
+    flex-grow: 1;
+    flex-basis: 50%;
+    padding: 13.5px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .game-over-card {
+    width: 45.42vw;
+    padding: 51px 56px 69px 56px;
+  }
 }

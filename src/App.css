@@ -21,3 +21,8 @@ main {
     height: 52px;
   }
 }
+@media screen and (min-width: 800px) {
+  header {
+    margin: 6.54vh 11.46vw 8.3vh 11.46vw;
+  }
+}
