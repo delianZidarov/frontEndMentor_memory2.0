@@ -28,6 +28,6 @@ header h1 {
 }
 @media screen and (min-width: 1400px) {
   .logo {
-    transform: translateY(17px);
+    transform: translateY(13px);
   }
 }
