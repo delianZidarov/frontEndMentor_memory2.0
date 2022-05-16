@@ -9,8 +9,10 @@
   justify-content: center;
   background-color: var(--pop-up-overlay-bg);
   transition: 0.75s ease-out;
+  overflow-y: scroll;
 }
 .game-over-card {
+  max-width: 654px;
   width: 87.2vw;
   padding: 1.5rem;
   border-radius: var(--border-radius-small);

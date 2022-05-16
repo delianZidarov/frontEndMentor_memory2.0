@@ -111,11 +111,15 @@ form button:hover {
   }
 }
 @media screen and (min-width: 800px) {
+  .setup-popup {
+    overflow-y: scroll;
+  }
   .setup-logo-container .logo {
     margin-top: 15vh;
   }
   form {
     width: 45.41vw;
+    max-width: 654px;
     gap: 16px;
     padding: 56px;
   }
